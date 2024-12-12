@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6854a1baf8cd3914db7bbf7a201197d9, type: 3}
+  m_Name: Roue 2
+  m_EditorClassIdentifier: 
+  itemName: Roue_Normal
+  price: 5
+  description: Roue basique
+  prefab: {fileID: 7322386937147315868, guid: 28779cbc24680f645988bfd3ff1314da, type: 3}
