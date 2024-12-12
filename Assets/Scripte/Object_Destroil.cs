@@ -6,7 +6,8 @@ public class ObjectDeactivateHandler : MonoBehaviour
     public float increaseAmount = 20f;  // Valeur à ajouter à chainePerformance, modifiable dans l'inspecteur
     public float performanceMax = 20f;
     public float chanceToIncreaseDeceleration = 0.1f; // Pourcentage de chance (0.1 = 10%)
-
+    public float minDeceleration = 0f;
+    public float deceleration=0f;
     void Start()
     {
         // Trouver l'instance de SpeedManager dans la scène
@@ -19,6 +20,8 @@ public class ObjectDeactivateHandler : MonoBehaviour
         if (speedManager != null)
         {
             // Ajouter increaseAmount à chainePerformance quand cet objet est détruit
+            speedManager.decelerationRate+=deceleration;
+            speedManager.minDecelerationRate+=minDeceleration;
             speedManager.chainePerformance += increaseAmount;
             speedManager.whellsPerformanceMax += performanceMax;
             speedManager.chanceToIncreaseDeceleration += chanceToIncreaseDeceleration;

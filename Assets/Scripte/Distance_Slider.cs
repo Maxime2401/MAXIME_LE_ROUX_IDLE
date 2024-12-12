@@ -5,7 +5,7 @@ public class DistanceSliderManager : MonoBehaviour
 {
     public Slider distanceSlider;     // Slider pour afficher la distance
     public DistanceManager distanceManager; // Référence au DistanceManager
-    private float distanceGoal = 100f; // Objectif de distance initial
+    private float distanceGoal = 50f; // Objectif de distance initial
 
     void Start()
     {

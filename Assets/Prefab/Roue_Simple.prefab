@@ -150,3 +150,5 @@ MonoBehaviour:
   increaseAmount: 10
   performanceMax: 50
   chanceToIncreaseDeceleration: 0
+  minDeceleration: 1
+  deceleration: 1

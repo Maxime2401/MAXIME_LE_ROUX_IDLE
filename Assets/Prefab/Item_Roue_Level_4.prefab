@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6116445167023347071}
   - component: {fileID: -7149562190283440431}
   m_Layer: 5
-  m_Name: Item_Roue_Level_3
+  m_Name: Item_Roue_Level_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92,7 +92,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   increaseAmount: 20
   performanceMax: 20
-  chanceToIncreaseDeceleration: 0.4
+  chanceToIncreaseDeceleration: -0.2
   minDeceleration: 2
   deceleration: 2
 --- !u!114 &6116445167023347071
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ca771a6bdd4ad34aa4cecccfff36d39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectID: 5
+  objectID: 8
 --- !u!114 &-7149562190283440431
 MonoBehaviour:
   m_ObjectHideFlags: 0

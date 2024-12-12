@@ -37,7 +37,7 @@ public class SpeedManager : MonoBehaviour
             // Vérifier si la décélération doit augmenter
             if (Random.value < chanceToIncreaseDeceleration)
             {
-                decelerationRate += 20f;
+                decelerationRate += 40f;
             }
             timeSinceLastCheck = 0f; // Réinitialiser le compteur de temps
         }
