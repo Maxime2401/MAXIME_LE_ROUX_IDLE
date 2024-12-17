@@ -1,6 +1,6 @@
 using UnityEngine;
 using TMPro;  // Importer TextMeshPro
-using UnityEngine.UI; // Importer UI pour l'image
+using UnityEngine.UI; // Importer UI pour l'image et le slider
 
 public class SpeedManager : MonoBehaviour
 {
@@ -9,7 +9,7 @@ public class SpeedManager : MonoBehaviour
     public float accelerationAmount = 5f ;  // Montant d'augmentation de la vitesse à chaque clic
     public float decelerationRate = 5f;     // Taux de décélération (diminution de la vitesse quand le joueur ne clique pas)
     public float minDecelerationRate = 10f; // Décélération minimale
-    public float maxDecelerationRate = 50f; // Décélération maximale pour l'avertissement
+    public float maxDecelerationRate = 185f; // Décélération maximale pour l'avertissement
     public float wheelsPerformance = 1f;
     public float whellsPerformanceMax = 0f;
     public float chainePerformance = 1f;
@@ -22,9 +22,20 @@ public class SpeedManager : MonoBehaviour
     public Image warningImage; // Référence à l'image d'avertissement
     public Color minDecelerationColor = Color.green; // Couleur pour la décélération minimale
     public Color maxDecelerationColor = Color.red;   // Couleur pour la décélération maximale
+    public Slider speedSlider; // Référence au slider de vitesse
 
     private bool hasSpeedChanged = false;
     private float timeSinceLastCheck = 0f; // Temps écoulé depuis la dernière vérification
+
+    void Start()
+    {
+        // Configurer le slider pour que la valeur maximale soit 1
+        if (speedSlider != null)
+        {
+            speedSlider.minValue = 0;
+            speedSlider.maxValue = 1;
+        }
+    }
 
     void Update()
     {
@@ -37,7 +48,7 @@ public class SpeedManager : MonoBehaviour
             // Vérifier si la décélération doit augmenter
             if (Random.value < chanceToIncreaseDeceleration)
             {
-                decelerationRate += 40f;
+                decelerationRate += 185f;
             }
             timeSinceLastCheck = 0f; // Réinitialiser le compteur de temps
         }
@@ -77,6 +88,9 @@ public class SpeedManager : MonoBehaviour
             // Mettre à jour le compteur de vitesse
             UpdateSpeedometer();
 
+            // Mettre à jour le slider de vitesse
+            UpdateSpeedSlider();
+
             // Réinitialise le flag pour ne pas recalculer chaque frame
             hasSpeedChanged = false;
         }
@@ -98,6 +112,15 @@ public class SpeedManager : MonoBehaviour
             // Conversion de la vitesse de Unity (en unités/sec) en km/h
             float speedInKmH = currentSpeed * 0.1f; // 1 unité/sec = 0.1 km/h
             speedometerText.text = "Vitesse: " + Mathf.Round(speedInKmH) + " km/h";  // Affichage
+        }
+    }
+
+    // Mise à jour du slider de vitesse
+    void UpdateSpeedSlider()
+    {
+        if (speedSlider != null)
+        {
+            speedSlider.value = currentSpeed / maxSpeed; // Mettre à jour la valeur du slider en fonction de la vitesse actuelle
         }
     }
 

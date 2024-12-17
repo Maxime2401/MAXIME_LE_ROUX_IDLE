@@ -90,9 +90,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0150392d1810fa1479a027513f2b9174, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseAmount: 20
-  performanceMax: 20
-  chanceToIncreaseDeceleration: 0.4
+  increaseAmount: 10
+  performanceMax: 100
+  chanceToIncreaseDeceleration: 0.5
   minDeceleration: 2
   deceleration: 2
 --- !u!114 &6116445167023347071

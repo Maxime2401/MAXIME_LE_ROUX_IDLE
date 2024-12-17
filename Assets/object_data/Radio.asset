@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Radio
   m_EditorClassIdentifier: 
   itemName: Radio_Cat
-  price: 0
+  price: 10
   description: 'Permet d''ecouter les meilleurs song de chat '
   prefab: {fileID: 4421318334510361379, guid: dd223c700baf7f34b8ffe064e1bd2d4f, type: 3}
