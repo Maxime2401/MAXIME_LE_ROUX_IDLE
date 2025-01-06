@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems; // Pour les événements de souris
 
-public class ObjectHoverDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class Descriptif : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public GameObject objectToShow;  // L'objet à afficher lorsque la souris survole cet objet
 

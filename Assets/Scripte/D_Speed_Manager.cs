@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;  // Importer TextMeshPro
 using UnityEngine.UI; // Importer UI pour l'image et le slider
+using System.Collections; // Importer System.Collections pour les coroutines
 
 public class SpeedManager : MonoBehaviour
 {
@@ -25,7 +26,6 @@ public class SpeedManager : MonoBehaviour
     public Slider speedSlider; // Référence au slider de vitesse
 
     private bool hasSpeedChanged = false;
-    private float timeSinceLastCheck = 0f; // Temps écoulé depuis la dernière vérification
 
     void Start()
     {
@@ -35,24 +35,13 @@ public class SpeedManager : MonoBehaviour
             speedSlider.minValue = 0;
             speedSlider.maxValue = 1;
         }
+
+        // Démarrer la coroutine pour vérifier la décélération toutes les 30 secondes
+        StartCoroutine(CheckDeceleration());
     }
 
     void Update()
     {
-        // Mettre à jour le temps écoulé
-        timeSinceLastCheck += Time.deltaTime;
-
-        // Vérifier si 30 secondes se sont écoulées
-        if (timeSinceLastCheck >= 30f)
-        {
-            // Vérifier si la décélération doit augmenter
-            if (Random.value < chanceToIncreaseDeceleration)
-            {
-                decelerationRate += 185f;
-            }
-            timeSinceLastCheck = 0f; // Réinitialiser le compteur de temps
-        }
-
         // Appliquer la décélération uniquement si la vitesse est positive
         if (currentSpeed > 0)
         {
@@ -128,5 +117,20 @@ public class SpeedManager : MonoBehaviour
     public void ReduceDeceleration(float amount)
     {
         decelerationRate = Mathf.Max(decelerationRate - amount, minDecelerationRate);
+    }
+
+    // Coroutine pour vérifier la décélération toutes les 30 secondes
+    IEnumerator CheckDeceleration()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(30f);
+
+            // Vérifier si la décélération doit augmenter
+            if (Random.value < chanceToIncreaseDeceleration)
+            {
+                decelerationRate += 185f;
+            }
+        }
     }
 }
