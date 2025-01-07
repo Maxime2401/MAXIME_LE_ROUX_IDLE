@@ -1,49 +1,53 @@
 using UnityEngine;
-using UnityEngine.UI; // Nécessaire pour manipuler des UI Images
+using UnityEngine.UI;
+using System.Collections;
 
-public class SmoothBlink : MonoBehaviour
+public class SimpleBlink : MonoBehaviour
 {
-    [Header("Configuration")]
-    public float blinkSpeed = 2.0f; // Vitesse du clignotement (plus grand = plus rapide)
-    public float minAlpha = 0.2f;   // Opacité minimale
-    public float maxAlpha = 1.0f;   // Opacité maximale
+    public float blinkSpeed = 2.0f; // Vitesse du clignotement
+    public float minAlpha = 0.2f;  // Opacité minimale
+    public float maxAlpha = 1.0f;  // Opacité maximale
 
-    private Image imageComponent;   // Pour les UI Images
-    private Renderer objectRenderer; // Pour les objets 3D (matériaux)
-    private Material materialInstance; // Instance du matériau pour le Renderer
+    private Image imageComponent;
 
-    void Start()
+    void OnEnable()
     {
-        // Récupère le composant Image pour les objets UI
         imageComponent = GetComponent<Image>();
+        StartCoroutine(BlinkCoroutine());
+    }
 
-        // Pour les objets 3D, récupère le Renderer et crée une instance de matériau
-        objectRenderer = GetComponent<Renderer>();
-        if (objectRenderer != null)
+    void OnDisable()
+    {
+        StopAllCoroutines(); // Arrête toutes les coroutines lorsque l'objet est désactivé
+    }
+
+    private IEnumerator BlinkCoroutine()
+    {
+        while (true)
         {
-            materialInstance = objectRenderer.material;
+            for (float t = 0; t <= 1; t += Time.unscaledDeltaTime * blinkSpeed)
+            {
+                if (!gameObject.activeInHierarchy) yield break;
+                SetAlpha(Mathf.Lerp(minAlpha, maxAlpha, t));
+                yield return null;
+            }
+
+            for (float t = 1; t >= 0; t -= Time.unscaledDeltaTime * blinkSpeed)
+            {
+                if (!gameObject.activeInHierarchy) yield break;
+                SetAlpha(Mathf.Lerp(minAlpha, maxAlpha, t));
+                yield return null;
+            }
         }
     }
 
-    void Update()
+    private void SetAlpha(float alpha)
     {
-        // Calcule l'alpha (transparence) smooth avec PingPong
-        float alpha = Mathf.Lerp(minAlpha, maxAlpha, Mathf.PingPong(Time.time * blinkSpeed, 1));
-
-        // Applique l'alpha selon le type d'objet
         if (imageComponent != null)
         {
-            // Pour les UI Images
             Color color = imageComponent.color;
             color.a = alpha;
             imageComponent.color = color;
-        }
-        else if (materialInstance != null)
-        {
-            // Pour les matériaux des objets 3D
-            Color color = materialInstance.color;
-            color.a = alpha;
-            materialInstance.color = color;
         }
     }
 }
