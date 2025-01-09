@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Roue_Level_3
   m_EditorClassIdentifier: 
   itemName: Roue En Pneu
-  price: 0
+  price: 40
   description: Permet de d'aller plus vite mais a des chance de degonfler
   prefab: {fileID: 4889758458024373557, guid: 436ec47c504db334ea5df28d316d0ee1, type: 3}

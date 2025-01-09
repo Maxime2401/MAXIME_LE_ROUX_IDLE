@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Roue 2
   m_EditorClassIdentifier: 
   itemName: Roue_Normal
-  price: 5
+  price: 10
   description: Roue basique
   prefab: {fileID: 7322386937147315868, guid: 28779cbc24680f645988bfd3ff1314da, type: 3}

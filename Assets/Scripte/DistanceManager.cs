@@ -4,7 +4,7 @@ using TMPro;
 public class DistanceManager : MonoBehaviour
 {
     public float totalDistance = 0f;  // Distance totale parcourue
-    public float moneyPerKm = 5f;     // Montant d'argent gagné par km parcouru
+    public float moneyPerKm = 1f;     // Montant d'argent gagné par km parcouru
     public TextMeshProUGUI distanceText; // Texte pour afficher la distance
 
     private SpeedManager speedManager;  // Référence au SpeedManager
@@ -51,7 +51,7 @@ public class DistanceManager : MonoBehaviour
     // Récompenser de l'argent pour chaque km parcouru
     void RewardMoney()
     {
-        float distanceInKm = totalDistance / 1000f;
+        float distanceInKm = totalDistance / 200f;
 
         if (distanceInKm >= lastPaidDistance + 1) // Ajoute de l'argent tous les 1 km
         {

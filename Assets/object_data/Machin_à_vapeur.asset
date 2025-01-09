@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: "Machin_\xE0_vapeur"
   m_EditorClassIdentifier: 
   itemName: "Machine \xE0 vapeur"
-  price: 0
-  description: 
+  price: 50
+  description: Augmente la vitesse
   prefab: {fileID: 6364297405267129467, guid: 83ff1992eb70bb94a8b2c0a174e12039, type: 3}

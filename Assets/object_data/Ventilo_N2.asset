@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Ventilo_N2
   m_EditorClassIdentifier: 
   itemName: Vantilateur
-  price: 0
-  description: 
+  price: 40
+  description: 2s/click
   prefab: {fileID: 1880008666671282492, guid: ef8568a64fd49ef47b0e071cd2c85459, type: 3}

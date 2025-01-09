@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Ventilateur en bois
   price: 20
-  description: Permet d'avancer legerement tout seul
+  description: Permet d'avancer legerement tout seul 3s/click
   prefab: {fileID: 1880008666671282492, guid: b11d3cee98a941546bd4b2a11a178c3b, type: 3}

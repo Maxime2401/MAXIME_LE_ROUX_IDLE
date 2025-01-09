@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Moteur
   m_EditorClassIdentifier: 
   itemName: Moteur
-  price: 0
-  description: 
+  price: 500
+  description: Augmente la vitesse
   prefab: {fileID: 6364297405267129467, guid: 2a100a9e3d7abe644963236bc593d11d, type: 3}

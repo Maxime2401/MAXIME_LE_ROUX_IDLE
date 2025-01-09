@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Propulseur
   m_EditorClassIdentifier: 
   itemName: Propulseur
-  price: 0
-  description: 
+  price: 50
+  description: 1s/click
   prefab: {fileID: 1880008666671282492, guid: cc6cfd791e842924cbdb616369c88c75, type: 3}

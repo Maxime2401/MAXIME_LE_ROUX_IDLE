@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Chaine
   m_EditorClassIdentifier: 
   itemName: Chaine
-  price: 0
+  price: 20
   description: Augmente la puissance
   prefab: {fileID: 6364297405267129467, guid: 7e55f6571b351294eb08738c60bc0630, type: 3}
