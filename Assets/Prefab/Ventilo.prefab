@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   increaseAmount: 0
-  performanceMax: 0
+  performanceMax: 50
   chanceToIncreaseDeceleration: 0
   minDeceleration: 1
   deceleration: 1

@@ -137,8 +137,8 @@ MonoBehaviour:
   increaseAmount: 5
   performanceMax: 200
   chanceToIncreaseDeceleration: 0
-  minDeceleration: 0
-  deceleration: 0
+  minDeceleration: 5
+  deceleration: 5
 --- !u!114 &-1026933338346264861
 MonoBehaviour:
   m_ObjectHideFlags: 0
